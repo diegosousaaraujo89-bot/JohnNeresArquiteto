@@ -260,6 +260,7 @@ function PortfolioCard({project,onClick,onLightbox}){
 }
 
 function ProjectModal({project,onClose,onQuote}){
+  const isMobile = useIsMobile();
   return(
     <div style={{position:"fixed",inset:0,zIndex:300,background:"rgba(30,28,26,0.88)",backdropFilter:"blur(6px)",display:"flex",alignItems:"center",justifyContent:"center",padding:20,overflowY:"auto"}} onClick={e=>e.target===e.currentTarget&&onClose()}>
       <div style={{background:COLORS.bgLight,maxWidth:900,width:"100%",border:`1px solid ${COLORS.border}`,position:"relative",maxHeight:"92vh",overflowY:"auto"}}>
@@ -1328,6 +1329,7 @@ function LgpdBanner(){
 
 
 function ComoTrabalhamos(){
+  const isMobile = useIsMobile();
   const C=COLORS;
   const [active,setActive]=useState(0);
   const steps=[
@@ -1416,6 +1418,7 @@ function ComoTrabalhamos(){
 }
 
 function WhatsAppFloat(){
+  const isMobile = useIsMobile();
   const [hov,setHov]=useState(false);
   const [tooltip,setTooltip]=useState(true);
   useEffect(()=>{const id=setTimeout(()=>setTooltip(false),5000);return()=>clearTimeout(id);},[]); 
